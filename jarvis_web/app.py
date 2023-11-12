@@ -25,7 +25,7 @@ r = sr.Recognizer()
 
 bot_id = "Jarvis"
 
-openai.api_key = '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'
+openai.api_key = 'YOUR OPENAI KEY'
 messages = [
     {"role": "system", "content": f"Tu es un assistant sympa et très intelligent du nom de {bot_id}, tu ne dois jamais dire : Je suis une intelligence artificielle développée par OpenAI "}
 ]
