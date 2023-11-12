@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis</title>
+    <link rel="stylesheet" href="/static/app.css">
+    <link rel="shortcut icon" href="static\logo-removebg-preview.ico" sizes="128x128" type="image/x-icon">
+
+    <script src="static\chat.js"></script>
+    
+    <script src="static\speech_recognition.js"></script>
+     
+</head>
+<body>
+    <div class="back">
+        <div class="title">
+            <div class="title-u">
+                <img class="title-logo-img" src="static\logo-removebg-preview.png" alt="">
+            <img class="title-logo" src="static\title-logo-removebg-preview.png" alt="Jarvis">
+            </div>
+        </div>
+        {{audio}}
+        <div class="card">
+            <div id="response-container" class="response-container"></div>
+            <div class="loader3" id="loader3" style="display: none;">
+                <div class="circle1"></div>
+                <div class="circle1"></div>
+                <div class="circle1"></div>
+                <div class="circle1"></div>
+                <div class="circle1"></div>
+            </div>
+            <form method="POST" action="/get">
+               <div class="text-box">
+                    <textarea name="chat" id="chat" placeholder="Send a message"></textarea>
+                    <button type="button"  id="ask-button" class="ask-button" onclick="askQuestion()"><img src="/static/icons8-envoyer-64.png" alt="ask"></button>
+               </div>
+            </form>
+           <form method="POST" action="/process_audio">
+                <div class="mic-box">
+                    <button type="button" class="mic-button" id="start-record-button" onclick="startCapture()"><img src="static\icons8-microphone-48.png" alt="mic"></button>
+                    
+                </div>
+                <div class="anime" id="recording" style="display: none;">
+                    <div class="anim-box">
+                        <div class="anim-interieur">
+                            <div class="rect rect1"></div>
+                            <div class="rect rect2"></div>
+                            <div class="rect rect3"></div>
+                            <div class="rect rect4"></div>
+                            <div class="rect rect5"></div>
+                        </div>
+                    </div>
+                </div>
+           </form>
+        </div>
+      </div>
+      <audio id="audio-player" controls style="display: none;">
+        <source id="audio-source" src="static/audio2.mp3" type="audio/mpeg">
+        Votre navigateur ne prend pas en charge l'élément audio.
+    </audio>
+
+</body>
+</html>
